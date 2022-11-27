@@ -1,0 +1,169 @@
+:root {
+  --color-it: #e74c3c;
+}
+
+* {
+  color: var(--color-it);
+}
+
+#section1 {
+  color: var(--color-it);
+}
+
+li {
+  color: var(--color-it);
+}
+
+div a {
+  color: var(--color-it);
+}
+
+div > a {
+  color: var(--color-it);
+}
+
+
+
+
+.red {
+  color: red
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.red.blue{
+  color: rebeccapurple;
+}
+
+
+
+
+a + p {
+  font-weight: bold;
+}
+
+p + p {
+  color: var(--color-it);
+}
+
+a ~ p {
+  color: limegreen;
+}
+
+
+
+
+.lime {
+  color: lime;
+}
+p.lime {
+  color: limegreen;
+}
+
+i,
+span {
+  color: blue;
+}
+
+
+
+
+[alt] {
+  filter: grayscale();
+}
+img:not([alt]),
+img[alt=''] {
+  border: 2px dashed red;
+}
+
+
+
+
+input[type="text"] {
+  border: 2px solid blue;
+}
+
+input[type="submit"]:hover {
+  background-color: limegreen;
+}
+
+input[type="password"]:focus {
+  background-color: turquoise;
+}
+
+
+
+
+#extra {
+  display: inline-block;
+  background-color: orange;
+}
+#extra::before {
+  content:'before...';
+  background-color: red;
+}
+#extra::after {
+  content:'after...';
+  background-color: red;
+}
+
+#extra2 {
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 50px auto;
+  background: blue;
+}
+#extra2::before {
+  content: 'before';
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: aquamarine;
+  top: 0;
+  right: 100%;
+}
+#extra2::after {
+  content: 'after';
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: lime;
+  top: 0;
+  left: 100%;
+}
+
+
+.order,
+.menu {
+  list-style: none;
+  width: fit-content;
+  margin: 2rem 0;
+  padding: 0;
+}
+.order li:nth-child(3) {
+  color: var(--color-it);
+}
+
+.order li:nth-child(odd) {
+  font-weight: bold;
+}
+
+.order li:nth-child(even) {
+  text-decoration: underline;
+}
+
+.menu li {
+  padding: .5rem 2rem;
+  background-color: aquamarine;
+  border: 1px solid;
+  border-bottom: 0;
+}
+.menu li:last-child {
+  border-bottom: 1px solid; 
+}

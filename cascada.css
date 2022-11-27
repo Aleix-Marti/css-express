@@ -1,0 +1,61 @@
+.titulo {
+  color: blue;
+  /* color: blue !important; */
+}
+
+
+
+.blue {
+  color: blue;
+}
+
+.red {
+  color: red
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.red.blue {
+  color: yellow;
+}
+
+.blue.red{
+  color: rebeccapurple;
+}
+
+
+
+/* div  <  .div  <  div.div  <  #div  <  div#div */
+
+div {
+  color: red;
+}
+
+.div {
+  color: green;
+}
+
+div.div{
+  color: lime;
+}
+
+#div {
+  color: blue;
+}
+
+div#div {
+  color: orangered;
+}
+
+
+
+
+/* div#js > p#generated.generated { */
+/* div#js > p#generated.generated {
+  color: lime !important;
+} */
+.generated {
+  color: lime;
+}
