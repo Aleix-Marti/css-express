@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="libreria.js"></script>
+    <!-- hoja de estilo externa -->
+    <link rel="stylesheet" href="cascada.css">
+    
+    <!-- etiqueta style o embebido en el mismo documento HTML -->
+    <style>
+        .titulo {
+            color: yellow;
+            /* color: yellow !important; */
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <!-- estilo CSS inline -->
+    <h2 class="titulo" style="color:red">Título en color</h2>
+
+    <section id="section">
+        <ul>
+            <li>link 1</li>
+            <li class="red">link 2</li>
+            <li class="bold">link 3</li>
+            <li class="red bold">link 4</li>
+            <li class="red blue bold">link 4</li>
+            <li class="blue red bold">link 4</li>
+        </ul>
+    </section>
+
+
+    <hr>
+
+    <div id="div" class="div">lorem ipsum</div>
+    <div id="div">lorem ipsum</div>
+    <div class="div">lorem ipsum</div>
+    <div>lorem ipsum</div>
+
+    <hr>
+
+    <div id="js"></div>
+
+</body>
+</html>

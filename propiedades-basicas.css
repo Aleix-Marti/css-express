@@ -1,0 +1,179 @@
+.css {
+
+/* Unidades */
+/* Aplican a principalmente a: width, height, padding, margin, top, right, bottom, left, font-size */
+/*
+px: valor absoluto
+em: valor relativo a su contenedor o ancestro que tenga definido un font-size
+rem: valor relativo al font-size definido en el body o html. Por defecto 1rem = 16px
+%: valor relativo a su contenedor o ancestro que tenga definida la propiedad
+vh: porcentaje del alto del viewport (ventana del navegador). 10vh = 10% del alto del viewport
+vw: porcentaje del ancho del viewport (ventana del navegador). 10vw = 10% del ancho del viewport
+
+calc: valor calculado que acepta operaciones matemáticas básicas entre los valores anteriores. calc(100vw - 20px)
+max: valor máximo entre 2 valores. max(30vw,500px)
+min: valor mínimo entre 2 valores. min(30vw,500px)
+vmin: valor más pequeño entre el alto y el ancho del viewport. 10vmin = 10% del alto o ancho del viewport según el que sea menor
+vmax: valor más grande entre el alto y el ancho del viewport. 10vmax = 10% del alto o ancho del viewport según el que sea mayor
+clamp: valor por defecto que se mantendrá entre un mínimo y un máximo. clamp(10px, 5vw, 50px)
+
+0: si se quiere indicar el valor 0, no necesita unidad
+*/
+
+
+/* Posicionamento */
+
+display: block; /* ocupa 100% ancho pantalla, provoca salto del línea, se le pueden asignar medidas de width y height */
+display: inline; /* ocupa lo que su contenido, no provoca salto de línea, no acepta medidas */
+display: inline-block; /* ocupa lo que su contenido, no provoca salto de línea, acepta medidas */
+display: none; /* no se muestra */
+display: flex; /* aplica Flexbox a sus elementos hijos */
+display: grid; /* aplica Grid a sus elementos hijos */
+
+position: relative; /* posición "natural" según esté escrito en el HTML */
+position: absolute; /* dentro (o hijo) de un elemento con position:relative */
+position: fixed; /* siempre fijo, no le afecta el scroll */
+position: sticky; /* cuando el scroll lega a cierta posición, se queda fijado */
+
+/* Necesitan que se le indique position */
+top: 70%;
+left: 5em;
+right: 5rem;
+bottom: 0;
+
+/* no funcionan con display:inline */
+width: 200px;
+height: 80vh;
+
+/* Espaciado y márgenes */
+/*
+Margin: espaciado entre el borde exterior de varios elementos (espacio exterior)
+Padding: espaciado entre el borde y el contenido de un elemento (espacio interior)
+Border: contorno de un elemento
+*/
+
+padding: 20px; /* top, right, bottom, left = 20px */
+padding: 20px 35px; /* top, bottom = 20px, right, left = 35px */
+padding: 20px 10px 35px; /* top = 20px, left, right = 10px, bottom = 35px */
+padding: 10px 20px 30px 40px; /* top = 10px, right = 20px, bottom = 30px, left = 40px */
+padding-top: 10px;
+padding-right: 2em;
+padding-bottom: 0;
+padding-left: 1rem;
+
+margin: 20px; /* top, right, bottom, left = 20px */
+margin: 20px 35px; /* top, bottom = 20px, right, left = 35px */
+margin: 20px 10px 35px; /* top = 20px, left, right = 10px, bottom = 35px */
+margin: 10px 20px 30px 40px; /* top = 10px, right = 20px, bottom = 30px, left = 40px */
+margin-top: 10px;
+margin-right: 2em;
+margin-bottom: 0;
+margin-left: 1rem;
+
+margin-inline-start: 0; /* margin horizontal inicial entre elementos según orden de lectura del HTML */
+margin-inline-end: 0; /* margin horizontal final entre elementos según orden de lectura del HTML */
+margin-block-start: 1rem; /* margin vertical inicial entre elementos según orden de lectura del HTML */
+margin-block-end: 1rem; /* margin vertical final entre elementos según orden de lectura del HTML */
+
+padding-inline-start: 40px; /* padding horizontal inicial entre elementos según orden de lectura del HTML */
+padding-inline-end: 10px; /* padding horizontal final entre elementos según orden de lectura del HTML */
+padding-block-start: 0; /* padding vertical inicial entre elementos según orden de lectura del HTML */
+padding-block-end: 10px; /* padding vertical final entre elementos según orden de lectura del HTML */
+
+border: 1px solid blue;
+border-width: 1px;
+border-style: solid;
+border-color: blue;
+
+border-top: 1px solid green;
+border-right: 0;
+border-bottom: 2px dashed yellow;
+border-left: 2px solid #fff;
+
+border-radius: 2px;
+
+/* Fondo */
+
+background-color: blue;
+background-image: url('ruta/a/la/imagen.jpg');
+background-position: fixed;
+background-size: 80%;
+background-size: cover;
+background-size: 50px 200px; /* width: 50px, height: 200px */
+background-position: center;
+background-position: 200px 10%; /* 200px des de l'esquerra, 10% des del top */
+background-attachment: fixed;
+
+
+/* Tipografía */
+
+font-family: 'Arial', sans-serif;
+font-size: 16px;
+font-size: 1em;
+font-size: 2rem;
+font-weight: bold;
+font-weight: 600; /* entre 100 i 900 */
+line-height: 1.2; /* alto de línea de texto */
+
+color: blue;
+color: #0000ff;
+color: rgb(0,0,255); /* red: 0-255, green: 0-255, blue: 0-255 */
+color: rgba(0,0,255,0.5); /* color con transparencia */
+color: hsl(240,100%,50%); /* hue: 0-360, saturation: 0-100%, lightness: 0-100% */
+
+text-decoration: underline;
+text-decoration: none;
+text-decoration: line-through;
+
+/* Efectos y animación */
+
+opacity: 0;
+opacity: 0.5;
+opacity: 1;
+
+transition: color .3s, width 2s;
+transition: all .3s;
+transition: width 2s linear 1s;
+transition-property: width;
+transition-duration: 2s;
+transition-timing-function: linear;
+transition-delay: 1s;
+
+animation-name: example;
+animation-duration: 4s;
+animation-iteration-count: 2;
+animation-direction: forwards;
+animation-direction: alternate;
+animation-direction: alternate-reverse;
+
+animation: animacion 2s infinite alternate-reverse;
+
+@keyframes animacion {
+    from { 
+        width: 200px;
+        top: 0;
+    }
+    to {
+        width: 400px;
+        top: 50px;
+    }
+}
+
+@keyframes anim {
+    0% {
+        color: red;
+        width: 50px;
+    }
+    50% {
+        color: blue;
+        width: 100px;
+    }
+    100% {
+        color: yellow;
+        width: 70px;
+    }
+}
+
+
+}
+
