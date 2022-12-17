@@ -1,0 +1,293 @@
+/* reset global para el tamaño de los elementos */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* crear variables globales */
+:root {
+  --menu-h: 60px;
+  --text-color: white;
+  --bg-color: #222;
+}
+
+/* aplicar una transición suave al scroll de la página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* quitar el margen del body que se genera por defecto en el navegador */
+body {
+  margin: 0;
+}
+
+/* separador entre secciones */
+div.separador {
+  margin: 10rem auto;
+}
+
+/* 01 transición al pasar cursor por encima */
+.morph {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  transition: all 3s;
+  margin-bottom: 1rem;
+}
+
+.morph:hover {
+  width: 200px;
+  background-color: lime;
+}
+
+
+
+/* 02 animación infinita de cambio de tamaño y color */
+
+.animation {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: lime;
+  margin: 5rem;
+  animation: colors 5s infinite;
+}
+
+@keyframes colors {
+  0% {
+    background-color: lime;
+    transform: scale(1);
+  }
+  30% {
+    background-color: green;
+    transform: scale(0.5);
+  }
+  70% {
+    background-color: turquoise;
+    transform: scale(1.5);
+  }
+  90% {
+    background-color: blue;
+    transform: scale(1);
+  }
+  100% {
+    background-color: lime;
+    transform: scale(1);
+  }
+}
+
+/* 03 enlace animado */
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-1rem);
+  }
+}
+
+.link {
+  display: block;
+  margin: 2rem auto;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  animation: bounce 1s infinite alternate;
+}
+
+.link::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 2px solid rebeccapurple;
+  border-top: 0;
+  border-right: 0;
+  transform: rotateZ(-45deg);
+}
+
+/* 04 botón con gradiente de fondo que cambia de posición al pasar el cursor por encima */
+
+.grad {
+  width: 100px;
+  background: linear-gradient(45deg, blue, lime);
+  background-size: 150px;
+  background-position: left;
+  color: white;
+  transition: all .3s;
+}
+.grad:hover {
+  color: black;
+  background-position: right;
+}
+
+/* 05 flexbox: mismo resultado aplicando dirección en fila o columna */
+
+.flex2,
+.flex {
+  display: flex;
+  width: 300px;
+  height: 300px;
+  border: 2px solid greenyellow;
+  justify-content: space-between;
+  margin: 2rem auto;
+}
+
+.flex2 div,
+.flex div {
+  background-color: rgb(0,0,0,0.5);
+  display: flex;
+  padding: 10px;
+}
+
+.flex .center {
+  align-items: center;
+}
+
+.flex .bottom {
+  align-items: flex-end;
+}
+
+.flex2 {
+  flex-direction: column;
+}
+
+.flex2 .center {
+  justify-content: center;
+}
+
+.flex2 .bottom {
+  justify-content: flex-end;
+}
+
+
+/* 06 barra de navegación con flexbox y flex-grow */
+
+.navbar {
+  display: flex;
+  background-color: black;
+}
+
+.navbar a {
+  outline: 1px solid red;
+  flex-grow: 1;
+  padding: 0.5rem 0;
+  text-align: center;
+  transition: all .3s;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  flex-grow: 2;
+  color: yellow;
+}
+
+/* 07 barra superior de menú con enlaces animados */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--menu-h);
+  background-color: #42b883;
+}
+
+.topbar .home img {
+  height: 30px;
+}
+
+.menu {
+  display: flex;
+  gap: 1rem;
+}
+.menu a {
+  position: relative;
+  text-decoration: none;
+  color: #111;
+}
+.menu a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  background: #111;
+  transition: .3s;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+
+/* 08 rellenar de color un svg */
+svg {
+  fill: yellow;
+}
+
+
+
+/* 09 sección full page con texto centrado horizontal y vertical */
+/* se puede centrar con flexbox o con grid */
+
+.hero {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  display: grid;
+  place-items: center;
+  background-color: lime;
+  height: calc(100vh - var(--menu-h));
+  padding: 20px;
+}
+
+
+
+
+
+/* 10 aplicar animación suave en el fondo del body */
+
+body.bg {
+  background: linear-gradient(45deg, transparent, rgb(0,0,0,0.3));
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: rainbow 60s infinite alternate; 
+  min-height: 100vh;
+}
+
+@keyframes rainbow {
+  0%{
+    background-color: palegreen;
+  }
+  50% {
+    background-color: aquamarine;
+  }
+  100% {
+    background-color: turquoise;
+  }
+}
+
+
+/* 11 aplicar automáticamente estilo claro/oscuro según la configuración del sistema operativo */
+body {
+  color: var(--text-color);
+  background-color: var(--bg-color); 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: white;
+    --bg-color: #222;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: #111;
+    --bg-color: #ddd;
+  }
+}

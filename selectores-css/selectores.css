@@ -6,6 +6,8 @@
   color: var(--color-it);
 }
 
+/* 01 selectores y jerarquía */
+
 #section1 {
   color: var(--color-it);
 }
@@ -24,6 +26,7 @@ div > a {
 
 
 
+/* 02 múltiples clases */
 
 .red {
   color: red
@@ -39,6 +42,7 @@ div > a {
 
 
 
+/* 03 elementos hermanos */
 
 a + p {
   font-weight: bold;
@@ -54,6 +58,7 @@ a ~ p {
 
 
 
+/* 04 selectores combinados */
 
 .lime {
   color: lime;
@@ -69,17 +74,19 @@ span {
 
 
 
+/* 05 atributos y not */
 
 [alt] {
   filter: grayscale();
 }
+
 img:not([alt]),
 img[alt=''] {
   border: 2px dashed red;
 }
 
 
-
+/* 06 atributos y estados */
 
 input[type="text"] {
   border: 2px solid blue;
@@ -94,7 +101,7 @@ input[type="password"]:focus {
 }
 
 
-
+/* 07 pseudoelementos ::after y ::before */
 
 #extra {
   display: inline-block;
@@ -138,6 +145,8 @@ input[type="password"]:focus {
   left: 100%;
 }
 
+
+/* 08 orden */
 
 .order,
 .menu {
