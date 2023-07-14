@@ -76,3 +76,25 @@ h1 {
 .card a {
   padding: 0 1rem 1rem;
 }
+
+.pills {
+  margin: 3rem 0;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); */
+
+  gap: 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-wrap: wrap;
+}
+
+.pill {
+  padding: 1rem 3rem;
+
+}
+.pill:nth-child(odd) {
+  background-color: aquamarine;
+}
+.pill:nth-child(even) {
+  background-color: turquoise;
+}
